@@ -1,5 +1,9 @@
 @startuml
 
+class Ship
+class CruiseShip
+class CargoShip
+
 object "Ship0: Ship" as ship0 {
     name = "Ship1"
     yearBuilt = "2000"
@@ -16,5 +20,10 @@ object "CargoShip2: CargoShip" as cargoShip2 {
     yearBuilt = "2020"
     cargoCapacity = 5000
 }
+Ship <|-- CargoShip
+Ship <|-- CruiseShip
+Ship <-- ship0
+CargoShip <-- cargoShip2
+CruiseShip <-- cruiseShip1
 
 @enduml
