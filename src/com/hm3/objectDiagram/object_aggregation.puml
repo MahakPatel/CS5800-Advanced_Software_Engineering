@@ -1,21 +1,21 @@
 @startuml
 
 object "Instructor1: Instructor" as Instructor1 {
-    firstName = "Nima"
-    lastName = "Davarpanah"
-    officeNumber = "3-2636"
+    firstName = "John"
+    lastName = "Doe"
+    officeNumber = "7-7777"
 }
 
 object "Textbook1: Textbook" as Textbook1 {
-    title = "Clean Code"
-    author = "Robert C. Martin"
-    publisher = "Prentice Hall"
+    title = "Data Structure & Algorithms in Java"
+    author = "Robert Lafore"
+    publisher = "Pearson"
 }
 
 object "Course1: Course" as course1 {
-    courseName = "Software Engineering"
-    instructor = Instructor1
-    textbook = Textbook1
+    courseName = "Java Programming"
+    instructor = instructor1
+    textbook = textbook1
 }
 
 course1 o-- Instructor1
