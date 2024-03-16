@@ -11,11 +11,11 @@ public class Driver {
 
         // Create customers with different diet plans
         Customer customer1 = new Customer("John", "No Restriction");
-        Customer customer4 = new Customer("Lita", "Nut Allergy");
-        Customer customer5 = new Customer("Ronda Rousey", "Vegan");
-        Customer customer2 = new Customer("Roman", "Paleo");
-        Customer customer3 = new Customer("Kevin", "Vegan");
-        Customer customer6 = new Customer("Seth Rollins", "Paleo");
+        Customer customer2 = new Customer("Ronda Rousey", "Vegan");
+        Customer customer3 = new Customer("Seth Rollins", "Paleo");
+        Customer customer4 = new Customer("Roman", "Paleo");
+        Customer customer5 = new Customer("Kevin", "Vegan");
+        Customer customer6 = new Customer("Lita", "Nut Allergy");
 
         // Generate meals for each customer
         MacronutrientMeal meal1 = mealFactory.createMeal(customer1);
