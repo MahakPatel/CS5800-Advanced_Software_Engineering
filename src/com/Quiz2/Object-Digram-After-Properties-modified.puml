@@ -50,13 +50,13 @@ object "character16 : Character" as character16 {
  character = '0'
 }
 object "redText : CharacterProperties" as redText {
- font = "Calibri"
+ font = "Arial"
  color = "Red"
  size = 12
 }
 
 object "blueText : CharacterProperties" as blueText {
- font = "Arial"
+ font = "Calibri"
  color = "Blue"
  size = 14
 }
