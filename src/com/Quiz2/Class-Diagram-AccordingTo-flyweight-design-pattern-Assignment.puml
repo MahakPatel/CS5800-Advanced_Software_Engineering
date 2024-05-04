@@ -1,0 +1,38 @@
+@startuml
+
+class Character {
+ - char character
+ + getCharacter(): char
+ + getFont(): String
+ + getColor(): String
+ + getSize(): int
+ + setCharacter(in character: char): void
+ + setCharacterProperty(in characterProperty: CharacterProperties): void
+}
+
+class CharacterProperties {
+ - String font
+ - String color
+ - int size
+ + getFont(): String
+ + getColor(): String
+ + getSize(): int
+}
+
+class CharacterPropertiesFactory {
+ + setAndRetrieveFlyweightCharacterProperties(in font: String, in color: String, in size: int): CharacterProperties
+}
+
+class Document {
+ + addCharacter(in c: char, in font: String, in color: String, in size: int): void
+ + editCharacterProperties(in index: int, in font: String, in color: String, in size: int): void
+ + saveToFile(in filename: String): void
+ + loadFromFile(in filename: String): void
+}
+
+Character "1" *-- "1" CharacterProperties : has
+CharacterPropertiesFactory "1" o-- "many" CharacterProperties: manages
+Document "1" *-- "many" Character: contains
+Document "1" *-- "1" CharacterPropertiesFactory: utilizes
+
+@enduml
