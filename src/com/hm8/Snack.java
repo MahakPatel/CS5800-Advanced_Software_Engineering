@@ -1,3 +1,5 @@
+package com.hm8;
+
 public class Snack {
     private String snackName;
     private double snackPrice;
