@@ -1,4 +1,6 @@
-public class IdleState implements StateOfVendingMachine{
+package com.hm8;
+
+public class IdleState implements StateOfVendingMachine {
 
     private VendingMachine vendingMachine;
 
