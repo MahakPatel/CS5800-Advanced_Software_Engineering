@@ -1,3 +1,5 @@
+package com.hm8;
+
 public class WaitingForMoneyState implements StateOfVendingMachine{
     private VendingMachine vendingMachine;
 
