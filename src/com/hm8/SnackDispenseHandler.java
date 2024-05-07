@@ -1,3 +1,5 @@
+package com.hm8;
+
 public abstract class SnackDispenseHandler {
     private SnackDispenseHandler next;
 
