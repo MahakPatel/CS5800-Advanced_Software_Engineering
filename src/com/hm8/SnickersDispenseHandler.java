@@ -1,3 +1,5 @@
+package com.hm8;
+
 public class SnickersDispenseHandler extends SnackDispenseHandler {
 
     public SnickersDispenseHandler(SnackDispenseHandler handler){
