@@ -1,4 +1,6 @@
-public class DispensingState implements StateOfVendingMachine{
+package com.hm8;
+
+public class DispensingState implements StateOfVendingMachine {
 
     private VendingMachine vendingMachine;
     private SnackDispenseHandler snackDispenseHandler;
