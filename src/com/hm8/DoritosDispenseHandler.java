@@ -1,3 +1,5 @@
+package com.hm8;
+
 public class DoritosDispenseHandler extends SnackDispenseHandler {
     public DoritosDispenseHandler(SnackDispenseHandler handler){
         super(handler);
