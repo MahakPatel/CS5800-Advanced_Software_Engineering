@@ -1,4 +1,4 @@
-package Final;
+package com.Final;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,11 +23,6 @@ public class Order implements Subject {
         for (Observer observer : observers) {
             observer.update(status);
         }
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-        notifyObservers();
     }
 
     public String getStatus() {
