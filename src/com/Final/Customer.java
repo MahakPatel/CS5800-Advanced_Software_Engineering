@@ -1,4 +1,4 @@
-package Final;
+package com.Final;
 
 public class Customer implements Observer {
     private String name;
