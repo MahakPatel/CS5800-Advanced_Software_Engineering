@@ -26,7 +26,32 @@ public class CPPFoodDelivery {
         return null;
     }
 
+    public String createOrder(String customerName, String restaurantName, String mealName) {
+        Customer customer = findCustomerByName(customerName);
+        Restaurant restaurant = findRestaurantByName(restaurantName);
+        if (customer != null && restaurant != null) {
+            Meal meal = restaurant.getMeal(mealName);  // Ensure this method exists in Restaurant
+            // Check null on meal as well
+            if (meal == null) {
+                System.out.println("Meal does not exist in " + restaurantName + " for " + mealName);
+                return "Meal does not exist.";
+            }
 
+            Order order = new Order();  // Assuming Order constructor and methods are correctly defined
+            order.registerObserver(customer); // Observing the order
+            order.setStatus("Preparing");
+
+            Driver driver = findAvailableDriver(restaurant.getCounty(), LocalTime.now());
+            if (driver != null) {
+                order.setStatus("Out for Delivery");
+                return String.format("Order created for %s: %s from %s with Driver %s delivering.", customerName, meal, restaurantName, driver.getName());
+            } else {
+                return "No drivers available for this county.";
+            }
+        } else {
+            return "Order could not be created. Verify customer, restaurant, and meal information.";
+        }
+    }
 
     private Customer findCustomerByName(String name) {
         return registry.getCustomers().stream()
