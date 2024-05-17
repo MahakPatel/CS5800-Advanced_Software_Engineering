@@ -1,4 +1,4 @@
-package Final;
+package com.Final;
 
 // Abstract base class for adding toppings to meals
 public abstract class MealDecorator extends Meal {
