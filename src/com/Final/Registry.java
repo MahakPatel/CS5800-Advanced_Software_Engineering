@@ -31,7 +31,9 @@ public class Registry {
         drivers.put(driver.getName(), driver);
     }
 
-
+    public Collection<Driver> getDrivers() {
+        return drivers.values();
+    }
 
     public void registerRestaurant(Restaurant restaurant) {
         restaurants.put(restaurant.getName(), restaurant);
