@@ -1,4 +1,4 @@
-package Final;
+package com.Final;
 
 public class MealBuilder {
     private String name;
@@ -14,17 +14,6 @@ public class MealBuilder {
         return this;
     }
 
-    // Fluent interface to add carbs
-    public MealBuilder addCarbs(int carbs) {
-        this.carbs = carbs;
-        return this;
-    }
-
-    // Fluent interface to add protein
-    public MealBuilder addProtein(int protein) {
-        this.protein = protein;
-        return this;
-    }
 
     // Constructs and returns the final Meal object
     public Meal build() {
