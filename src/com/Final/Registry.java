@@ -27,6 +27,10 @@ public class Registry {
         return customers.values();
     }
 
+    public void registerDriver(Driver driver) {
+        drivers.put(driver.getName(), driver);
+    }
+
 
 
     public void registerRestaurant(Restaurant restaurant) {
