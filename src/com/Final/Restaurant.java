@@ -39,6 +39,11 @@ public class Restaurant {
         return operatingHours;
     }
 
+    // Add meal to the restaurant's menu
+    public void addMeal(Meal meal) {
+        menu.put(meal.toString(), meal);
+        System.out.println("Added meal: " + meal + " to " + name);
+    }
 
     // Retrieve a specific meal from the menu
     public Meal getMeal(String name) {
