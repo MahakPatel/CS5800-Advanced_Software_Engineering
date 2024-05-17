@@ -6,5 +6,8 @@ public class ToppingAdder extends MealDecorator {
         super(meal);
     }
 
-
+    @Override
+    public void addTopping(String topping) {
+        meal.addTopping(topping);
+    }
 }
