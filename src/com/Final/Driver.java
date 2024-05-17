@@ -13,7 +13,25 @@ public class Driver {
         this.shift = shift;
     }
 
+    public String getName() {
+        return name;
+    }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public String getCounty() {
+        return county;
+    }
+
+    public Shift getShift() {
+        return shift;
+    }
+
+    public String getShiftAvailability() {
+        return shift.getAvailability();
+    }
 }
 
 
