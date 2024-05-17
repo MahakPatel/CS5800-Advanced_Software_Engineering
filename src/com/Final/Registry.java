@@ -1,4 +1,4 @@
-package Final;
+package com.Final;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -27,13 +27,7 @@ public class Registry {
         return customers.values();
     }
 
-    public void registerDriver(Driver driver) {
-        drivers.put(driver.getName(), driver);
-    }
 
-    public Collection<Driver> getDrivers() {
-        return drivers.values();
-    }
 
     public void registerRestaurant(Restaurant restaurant) {
         restaurants.put(restaurant.getName(), restaurant);
