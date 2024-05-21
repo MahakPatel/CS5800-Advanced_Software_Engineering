@@ -1,34 +1,37 @@
 package com.Final;
+import java.util.*;
 
-public class Customer implements Observer {
-    private String name;
+// Customer Class with Dietary Restrictions
+class Customer extends User {
     private String address;
     private String county;
-    private String dietaryRestriction;
-    private String statusUpdate;
+    private DietaryRestrictionStrategy dietaryRestrictionStrategy;
 
-    public Customer(String name, String address, String county, String dietaryRestriction) {
-        this.name = name;
+    public Customer(String name, String address, String county) {
+        super(name);
         this.address = address;
         this.county = county;
-        this.dietaryRestriction = dietaryRestriction;
     }
 
-    public String getName() {
-        return name;
+    public String getAddress() {
+        return address;
     }
 
     public String getCounty() {
         return county;
     }
 
-    public String getDietaryRestriction() {
-        return dietaryRestriction;
+    public void setDietaryRestrictionStrategy(DietaryRestrictionStrategy strategy) {
+        this.dietaryRestrictionStrategy = strategy;
     }
 
-    @Override
-    public void update(String message) {
-        this.statusUpdate = message;
-        System.out.println("Notification for " + name + ": " + message);
+    public DietaryRestrictionStrategy getDietaryRestrictionStrategy() {
+        return dietaryRestrictionStrategy;
+    }
+
+    public void applyDietaryRestriction(List<String> carbs, List<String> proteins, List<String> fats) {
+        if (dietaryRestrictionStrategy != null) {
+            dietaryRestrictionStrategy.applyRestriction(this, carbs, proteins, fats);
+        }
     }
 }

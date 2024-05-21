@@ -1,53 +1,73 @@
 package com.Final;
+import java.util.*;
 
-import java.util.HashMap;
-import java.util.Map;
-
-public class Restaurant {
-    private String name;
+// Restaurant Definition
+class Restaurant extends User {
     private String address;
     private String county;
-    private String cuisineType;
     private String operatingHours;
-    private Map<String, Meal> menu = new HashMap<>();
+    private String cuisineType;
+    private Map<String, Double> menu;
+    private Map<String, Double> toppings;
+    private int openingHour;
+    private int closingHour;
 
-    public Restaurant(String name, String address, String county, String cuisineType, String operatingHours) {
-        this.name = name;
+    public Restaurant(String name, String address, String county, String operatingHours, String cuisineType, Map<String, Double> menu, Map<String, Double> toppings, int openingHour, int closingHour) {
+        super(name);
         this.address = address;
         this.county = county;
-        this.cuisineType = cuisineType;
         this.operatingHours = operatingHours;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getCounty() {
-        return county;
+        this.cuisineType = cuisineType;
+        this.menu = menu;
+        this.toppings = toppings;
+        this.openingHour = openingHour;
+        this.closingHour = closingHour;
     }
 
     public String getAddress() {
         return address;
     }
 
-    public String getCuisineType() {
-        return cuisineType;
+    public String getCounty() {
+        return county;
     }
 
     public String getOperatingHours() {
         return operatingHours;
     }
 
-    // Add meal to the restaurant's menu
-    public void addMeal(Meal meal) {
-        menu.put(meal.toString(), meal);
-        System.out.println("Added meal: " + meal + " to " + name);
+    public String getCuisineType() {
+        return cuisineType;
     }
 
-    // Retrieve a specific meal from the menu
-    public Meal getMeal(String name) {
-        return menu.get(name);
+    public Map<String, Double> getMenu() {
+        return menu;
+    }
+
+    public Map<String, Double> getToppings() {
+        return toppings;
+    }
+
+    public boolean isOpenDuring(Date time) {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(time);
+        int hour = cal.get(Calendar.HOUR_OF_DAY);
+        return hour >= openingHour && hour < closingHour;
+    }
+
+    public String getMenuWithPrices() {
+        StringBuilder menuWithPrices = new StringBuilder();
+        for (Map.Entry<String, Double> entry : menu.entrySet()) {
+            menuWithPrices.append(entry.getKey()).append(" ($").append(entry.getValue()).append("), ");
+        }
+        return menuWithPrices.toString();
+    }
+
+    public String getToppingsWithPrices() {
+        StringBuilder toppingsWithPrices = new StringBuilder();
+        for (Map.Entry<String, Double> entry : toppings.entrySet()) {
+            toppingsWithPrices.append(entry.getKey()).append(" ($").append(entry.getValue()).append("), ");
+        }
+        return toppingsWithPrices.toString();
     }
 }
-
