@@ -1,0 +1,55 @@
+@startuml
+
+class Employee {
+    - firstName: String
+    - lastName: String
+    - socialSecurityNumber: String
+    + Employee(firstName: String, lastName: String, socialSecurityNumber: String)
+    + getFirstName(): String
+    + setFirstName(firstName: String): void
+    + getLastName(): String
+    + setLastName(lastName: String): void
+    + getSocialSecurityNumber(): String
+    + setSocialSecurityNumber(socialSecurityNumber: String): void
+}
+
+class BaseEmployee {
+    - baseSalary: double
+    + BaseEmployee(firstName: String, lastName: String, socialSecurityNumber: String, baseSalary: double)
+    + getBaseSalary(): double
+    + setBaseSalary(baseSalary: double): void
+}
+
+class CommissionEmployee {
+    - commissionRate: double
+    - grossSales: double
+    + CommissionEmployee(firstName: String, lastName: String, socialSecurityNumber: String, commissionRate: double, grossSales: double)
+    + getCommissionRate(): double
+    + setCommissionRate(commissionRate: double): void
+    + getGrossSales(): double
+    + setGrossSales(grossSales: double): void
+}
+
+class HourlyEmployee {
+    - wage: double
+    - hoursWorked: double
+    + HourlyEmployee(firstName: String, lastName: String, socialSecurityNumber: String, wage: double, hoursWorked: double)
+    + getWage(): double
+    + setWage(wage: double): void
+    + getHoursWorked(): double
+    + setHoursWorked(hoursWorked: double): void
+}
+
+class SalariedEmployee {
+    - weeklySalary: double
+    + SalariedEmployee(firstName: String, lastName: String, socialSecurityNumber: String, weeklySalary: double)
+    + getWeeklySalary(): double
+    + setWeeklySalary(weeklySalary: double): void
+}
+
+Employee <|-- BaseEmployee
+Employee <|-- CommissionEmployee
+Employee <|-- HourlyEmployee
+Employee <|-- SalariedEmployee
+
+@enduml
